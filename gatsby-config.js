@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Study Blog`,
+    title: `My blog`,
+    position: `Backend Developer`,
     description: `A blog for Gatsby's study purpose`,
     author: `@felipemelchior`,
   },
