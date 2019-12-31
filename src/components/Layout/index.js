@@ -5,9 +5,12 @@ import Profile from '../Profile';
 
 import { LayoutWrapper, LayoutMain } from './styles';
 
+import { GlobalStyles } from '../../styles/global';
+
 export default function Layout({ children }) {
   return (
     <LayoutWrapper>
+      <GlobalStyles />
       <aside>
         <Profile />
       </aside>
