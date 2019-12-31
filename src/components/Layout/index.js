@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Profile from '../Profile';
+import Sidebar from '../Sidebar';
 
 import { LayoutWrapper, LayoutMain } from './styles';
 
@@ -11,9 +11,7 @@ export default function Layout({ children }) {
   return (
     <LayoutWrapper>
       <GlobalStyles />
-      <aside>
-        <Profile />
-      </aside>
+      <Sidebar />
       <LayoutMain>{children}</LayoutMain>
     </LayoutWrapper>
   );
