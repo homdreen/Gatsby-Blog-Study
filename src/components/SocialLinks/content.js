@@ -1,0 +1,28 @@
+const links = [
+  {
+    label: 'Github',
+    url: 'https://github.com/',
+  },
+  {
+    label: 'Twitter',
+    url: 'https://twitter.com/',
+  },
+  {
+    label: 'Youtube',
+    url: 'https://youtube.com/',
+  },
+  {
+    label: 'Github',
+    url: 'https://github.com/',
+  },
+  {
+    label: 'Instagram',
+    url: 'https://instagram.com/',
+  },
+  {
+    label: 'Unsplash',
+    url: 'https://unsplash.com/',
+  },
+];
+
+export default links;

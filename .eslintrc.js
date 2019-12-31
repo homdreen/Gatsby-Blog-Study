@@ -26,5 +26,6 @@ module.exports = {
     "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "react/jsx-one-expression-per-line": "off",
     camelcase: "off",
+    "react/no-array-index-key": "off"
   },
 };
