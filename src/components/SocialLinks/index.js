@@ -8,7 +8,6 @@ import {
   IconWrapper,
 } from './styles';
 
-import icons from './icons';
 import links from './content';
 
 export default function SocialLinks() {
@@ -16,7 +15,7 @@ export default function SocialLinks() {
     <Container>
       <SocialLinksList>
         {links.map((link, i) => {
-          const Icon = icons[link.label];
+          const Icon = link.icon;
 
           return (
             <SocialLinksItem key={i}>
