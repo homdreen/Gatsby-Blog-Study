@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Sidebar from '../Sidebar';
+import MenuBar from '../MenuBar';
 
 import { LayoutWrapper, LayoutMain } from './styles';
 
@@ -13,6 +14,7 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <Sidebar />
       <LayoutMain>{children}</LayoutMain>
+      <MenuBar />
     </LayoutWrapper>
   );
 }
