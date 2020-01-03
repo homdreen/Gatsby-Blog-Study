@@ -43,8 +43,8 @@ export default function IndexPage() {
           node: {
             frontmatter: { background, category, date, title, description },
             fields: { slug },
+            timeToRead,
           },
-          timeToRead,
         }) => (
           <PostItem
             slug={slug}

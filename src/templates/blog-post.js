@@ -1,26 +1,16 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
-// import { Container } from './styles';
-
-export default function BlogPost() {
-  const { markdownRemark } = useStaticQuery(graphql`
-    query Post($slug: String) {
-      markdownRemark(fields: { slug: { eq: $slug } }) {
-        frontmatter {
-          title
-        }
-        html
-      }
-    }
-  `);
-
+export default function BlogPost({ data }) {
   const {
-    frontmatter: { title },
-    html,
-  } = markdownRemark;
+    markdownRemark: {
+      frontmatter: { title },
+      html,
+    },
+  } = data;
 
   return (
     <Layout>
@@ -29,3 +19,25 @@ export default function BlogPost() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query Post($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+      }
+      html
+    }
+  }
+`;
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+      html: PropTypes.string,
+    }),
+  }).isRequired,
+};
