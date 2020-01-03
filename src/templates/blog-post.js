@@ -5,10 +5,19 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
+import {
+  PostHeader,
+  PostTitle,
+  PostDate,
+  PostDescription,
+  MainContent,
+} from '../components/Post/styles';
+
 export default function BlogPost({ data }) {
   const {
     markdownRemark: {
-      frontmatter: { title },
+      frontmatter: { title, description, date },
+      timeToRead,
       html,
     },
   } = data;
@@ -16,8 +25,17 @@ export default function BlogPost({ data }) {
   return (
     <Layout>
       <SEO title={title} />
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <PostHeader>
+        <PostDate>
+          {date} - {timeToRead} min de leitura
+        </PostDate>
+        <PostTitle>{title}</PostTitle>
+        <PostDescription>{description}</PostDescription>
+      </PostHeader>
+
+      <MainContent>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </MainContent>
     </Layout>
   );
 }
@@ -27,7 +45,10 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        description
+        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
       }
+      timeToRead
       html
     }
   }
@@ -38,8 +59,11 @@ BlogPost.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
+        description: PropTypes.string,
+        date: PropTypes.string,
       }),
       html: PropTypes.string,
+      timeToRead: PropTypes.string,
     }),
   }).isRequired,
 };
