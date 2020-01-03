@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
 import PostItem from '../components/PostItem';
+import Pagination from '../components/Pagination';
 
 export default function BlogList(props) {
   const {
@@ -13,6 +14,14 @@ export default function BlogList(props) {
       allMarkdownRemark: { edges: postList },
     },
   } = props;
+
+  const {
+    pageContext: { currentPage, numPages },
+  } = props;
+  const isFirst = currentPage === 1;
+  const isLast = currentPage === numPages;
+  const prevPage = currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`;
+  const nextPage = `/page/${currentPage + 1}`;
 
   return (
     <Layout>
@@ -36,6 +45,14 @@ export default function BlogList(props) {
           />
         )
       )}
+      <Pagination
+        isFirst={isFirst}
+        isLast={isLast}
+        currentPage={currentPage}
+        numPages={numPages}
+        prevPage={prevPage}
+        nextPage={nextPage}
+      />
     </Layout>
   );
 }
@@ -71,5 +88,9 @@ BlogList.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
     }),
+  }).isRequired,
+  pageContext: PropTypes.shape({
+    currentPage: PropTypes.number,
+    numPages: PropTypes.number,
   }).isRequired,
 };

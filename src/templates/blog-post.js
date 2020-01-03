@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import SEO from '../components/seo';
 
 export default function BlogPost({ data }) {
   const {
@@ -14,6 +15,7 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout>
+      <SEO title={title} />
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
