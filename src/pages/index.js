@@ -9,16 +9,12 @@ import PostItem from '../components/PostItem';
 export default function IndexPage() {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query PostList {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             frontmatter {
               title
-              date(
-                locale: "pt-br"
-                formatString: "DD [de] MMMM [de] YYYY"
-                fromNow: true
-              )
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
               description
               category
               background
