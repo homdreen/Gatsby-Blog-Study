@@ -27,5 +27,7 @@ module.exports = {
     "react/jsx-one-expression-per-line": "off",
     camelcase: "off",
     "react/no-array-index-key": "off",
+    "react/no-danger-with-children": "off",
+    "react/no-danger": "off"
   },
 };
