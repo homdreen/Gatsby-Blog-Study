@@ -11,9 +11,24 @@ background: "#7159c1"
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [adipiscing](http://google.com) eu pulvinar vel, sodales vitae dui. :thumbsup: :smile: :sparkler:
 
-```javascript
-a=3
-puts a
+```jsx
+import React from 'react';
+
+import Profile from '../Profile';
+import SocialLinks from '../SocialLinks';
+import MenuLinks from '../MenuLinks';
+
+import { Container } from './styles';
+
+export default function Sidebar() {
+  return (
+    <Container>
+      <Profile />
+      <SocialLinks />
+      <MenuLinks />
+    </Container>
+  );
+}
 ```
 
 ## Fusce a metus eu
