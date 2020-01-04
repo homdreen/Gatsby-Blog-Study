@@ -28,6 +28,7 @@ module.exports = {
     camelcase: "off",
     "react/no-array-index-key": "off",
     "react/no-danger-with-children": "off",
-    "react/no-danger": "off"
+    "react/no-danger": "off",
+    "radix": "off",
   },
 };
