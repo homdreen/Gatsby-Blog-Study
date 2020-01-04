@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import RecommendedPost from '../components/RecommendedPost';
+import Comments from '../components/Comments';
 
 import {
   PostHeader,
@@ -18,6 +19,7 @@ export default function BlogPost({ data, pageContext }) {
   const {
     markdownRemark: {
       frontmatter: { title, description, date },
+      fields: { slug },
       timeToRead,
       html,
     },
@@ -40,6 +42,7 @@ export default function BlogPost({ data, pageContext }) {
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </MainContent>
       <RecommendedPost next={next} previous={previous} />
+      <Comments url={slug} title={title} />
     </Layout>
   );
 }
@@ -51,6 +54,9 @@ export const query = graphql`
         title
         description
         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+      }
+      fields {
+        slug
       }
       timeToRead
       html
@@ -65,6 +71,9 @@ BlogPost.propTypes = {
         title: PropTypes.string,
         description: PropTypes.string,
         date: PropTypes.string,
+      }),
+      fields: PropTypes.shape({
+        slug: PropTypes.string,
       }),
       html: PropTypes.string,
       timeToRead: PropTypes.string,
