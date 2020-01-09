@@ -11,6 +11,7 @@ export default function Hit({ hit }) {
       date={hit.date}
       description={hit.description}
       category={hit.category}
+      timeToRead={hit.timeToRead}
     />
   );
 }
@@ -25,5 +26,6 @@ Hit.propTypes = {
     date: PropTypes.string,
     description: PropTypes.string,
     category: PropTypes.string,
+    timeToRead: PropTypes.string,
   }).isRequired,
 };
