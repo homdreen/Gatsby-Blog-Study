@@ -43,4 +43,13 @@ export const MenuBarItem = styled.span`
   &:hover {
     color: var(--highlight);
   }
+
+  &.light {
+    color: #d4d400;
+    transition: color 0.5s;
+
+    &:hover {
+      color: #e2e240;
+    }
+  }
 `;

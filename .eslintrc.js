@@ -30,5 +30,6 @@ module.exports = {
     "react/no-danger-with-children": "off",
     "react/no-danger": "off",
     "radix": "off",
+    "no-underscore-dangle": "off",
   },
 };
