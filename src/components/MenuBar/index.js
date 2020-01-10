@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Home, Grid } from 'styled-icons/boxicons-solid/';
+import { Home } from 'styled-icons/boxicons-solid/';
 import {
   SearchAlt2 as Search,
   UpArrowAlt as Arrow,
@@ -44,9 +44,6 @@ export default function MenuBar() {
           className={theme}
         >
           <Light />
-        </MenuBarItem>
-        <MenuBarItem title="Mudar visualização">
-          <Grid />
         </MenuBarItem>
         <MenuBarItem title="Ir para o topo">
           <Arrow />
