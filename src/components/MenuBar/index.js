@@ -7,8 +7,6 @@ import {
 } from 'styled-icons/boxicons-regular';
 import { Lightbulb as Light } from 'styled-icons/remix-fill/Lightbulb';
 
-import ScrollUp from 'react-scroll-up';
-
 import { Container, MenuBarGroup, MenuBarItem, MenuBarLink } from './styles';
 
 export default function MenuBar() {
@@ -22,6 +20,10 @@ export default function MenuBar() {
   function handleTheme() {
     const isDarkMode = theme === 'dark';
     window.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
+  }
+
+  function handleScrollUp() {
+    window.scrollTo(0, 0);
   }
 
   return (
@@ -47,11 +49,9 @@ export default function MenuBar() {
         >
           <Light />
         </MenuBarItem>
-        <ScrollUp showUnder={0}>
-          <MenuBarItem title="Ir para o topo">
-            <Arrow />
-          </MenuBarItem>
-        </ScrollUp>
+        <MenuBarItem title="Ir para o topo" onClick={handleScrollUp}>
+          <Arrow />
+        </MenuBarItem>
       </MenuBarGroup>
     </Container>
   );
