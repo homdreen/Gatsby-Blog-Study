@@ -4,6 +4,7 @@ export const Container = styled.section`
   margin: auto;
   max-width: 800px;
   padding: 3rem 6.4rem 3rem;
+  background: var(--disqusBackground);
 
   iframe[src*='ads-iframe'] {
     display: none;
@@ -17,7 +18,7 @@ export const Container = styled.section`
 `;
 
 export const CommentsTitle = styled.h2`
-  color: var(--postColor);
+  color: var(--white);
   font-size: 2.1rem;
   font-weight: 700;
   padding-bottom: 2rem;

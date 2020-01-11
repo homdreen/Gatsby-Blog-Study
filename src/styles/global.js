@@ -73,6 +73,7 @@ export const GlobalStyles = createGlobalStyle`
     --postColor: #fff;
     --highlight: #1fa1f2;
     --mediumBackground: #192734;
+    --disqusBackground: #192734;
     --background: #16202c;
     --white: #fff;
     --black: #222;
@@ -83,6 +84,7 @@ export const GlobalStyles = createGlobalStyle`
     --texts: #555555;
     --highlight: #1fa1f2;
     --mediumBackground: #f0f0f3;
+    --disqusBackground: #a9b9c9;
     --background: #fff;
     --white: #fff;
     --black: #222;
